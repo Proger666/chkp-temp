@@ -11,9 +11,6 @@ def user():
         if field[0] == 'auth_user_email__row':
             if field[1].components[0].attributes['_value'] == "":
                 field[1].components[0].attributes['_value'] = "uspex666@mail.ru"
-        if field[0] == 'auth_user_password__row':
-            if field[1].components[0].attributes['_value'] == "":
-                field[1].components[0].attributes['_value'] = "123546"
     return dict(form=form)
 
 

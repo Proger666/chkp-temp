@@ -1,0 +1,144 @@
+{{extend "layout.html"}}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Статистика по чекапам
+                    <small>одобренные чекапы</small>
+                </h2>
+                <div class="filter">
+                    <div id="reportrange" class="pull-right"
+                         style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                        <span>March 17, 2018 - April 15, 2018</span> <b class="caret"></b>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="demo-container" style="height:280px">
+                        <div id="chart_plot_02" class="demo-placeholder" style="padding: 0px; position: relative;">
+                            <canvas class="flot-base"
+                                    style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1170px; height: 280px;"
+                                    width="1170" height="280"></canvas>
+                            <div class="flot-text"
+                                 style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
+                                <div class="flot-x-axis flot-x1-axis xAxis x1Axis"
+                                     style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;">
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 70px; text-align: center;">
+                                        16/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 182px; text-align: center;">
+                                        17/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 294px; text-align: center;">
+                                        20/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 406px; text-align: center;">
+                                        22/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 518px; text-align: center;">
+                                        24/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 631px; text-align: center;">
+                                        26/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 743px; text-align: center;">
+                                        28/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 855px; text-align: center;">
+                                        30/04/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 967px; text-align: center;">
+                                        02/05/18
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; max-width: 97px; top: 265px; left: 1079px; text-align: center;">
+                                        04/05/18
+                                    </div>
+                                </div>
+                                <div class="flot-y-axis flot-y1-axis yAxis y1Axis"
+                                     style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;">
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 247px; left: 12px; text-align: right;">0
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 206px; left: 6px; text-align: right;">1
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 165px; left: 6px; text-align: right;">3
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 124px; left: 6px; text-align: right;">6
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 83px; left: 6px; text-align: right;">9
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 42px; left: 0px; text-align: right;">12
+                                    </div>
+                                    <div class="flot-tick-label tickLabel"
+                                         style="position: absolute; top: 1px; left: 0px; text-align: right;">15
+                                    </div>
+                                </div>
+                            </div>
+                            <canvas class="flot-overlay"
+                                    style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 1170px; height: 280px;"
+                                    width="1170" height="280"></canvas>
+                            <div class="legend">
+                                <div style="position: absolute; width: 71px; height: 15px; top: -17px; right: 21px; background-color: rgb(255, 255, 255); opacity: 0.85;"></div>
+                                <table style="position:absolute;top:-17px;right:21px;;font-size:smaller;color:#3f3f3f">
+                                    <tbody>
+                                    <tr>
+                                        <td class="legendColorBox">
+                                            <div style="border:1px solid null;padding:1px">
+                                                <div style="width:4px;height:0;border:5px solid rgb(150,202,89);overflow:hidden"></div>
+                                            </div>
+                                        </td>
+                                        <td class="legendLabel">Загружено отчетов</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tiles">
+                        <div class="col-md-4 tile">
+                            <span>Всего CheckUP отчетов</span>
+                            <h2>{{=checkup_total}}</h2>
+                            <span class="sparkline11 graph" style="height: 160px;"><canvas width="198" height="40"
+                                                                                           style="display: inline-block; width: 198px; height: 40px; vertical-align: top;"></canvas></span>
+                        </div>
+                        <div class="col-md-4 tile">
+                            <span>Участвующих партнеров</span>
+                            <h2>{{=partners_total}}</h2>
+                            <span class="sparkline22 graph" style="height: 160px;"><canvas width="200" height="40"
+                                                                                           style="display: inline-block; width: 200px; height: 40px; vertical-align: top;"></canvas></span>
+                        </div>
+                        <div class="col-md-4 tile">
+                            <span>Конец Конкурса</span>
+                            <h2>{{=end_date}}</h2>
+                            <span class="sparkline11 graph" style="height: 160px;"><canvas width="198" height="40"
+                                                                                           style="display: inline-block; width: 198px; height: 40px; vertical-align: top;"></canvas></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

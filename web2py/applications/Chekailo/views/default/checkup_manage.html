@@ -1,0 +1,213 @@
+{{extend 'layout.html'}}
+
+
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Добавить новый CheckUP</h3>
+    </div>
+
+    <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row">
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Добавить CheckUP Report
+                    <small>Только PDF</small>
+                </h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+
+                <!-- Smart Wizard -->
+                <p>Все CheckUP отчеты должны быть аномизированы - Anonymized.</p>
+                <div id="wizard" class="form_wizard wizard_horizontal">
+                    <ul class="wizard_steps anchor">
+                        <li>
+                            <a href="#step-1" class="selected" isdone="1" rel="1">
+                                <span class="step_no">1</span>
+                                <span class="step_descr">
+                                              Шаг 1<br>
+                                              <small>Описание заказчика</small>
+                                          </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-2" class="disabled" isdone="0" rel="2">
+                                <span class="step_no">2</span>
+                                <span class="step_descr">
+                                              Шаг 2<br>
+                                              <small>Загрузка отчета</small>
+                                          </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-3" class="disabled" isdone="0" rel="3">
+                                <span class="step_no">3</span>
+                                <span class="step_descr">
+                                              Step 3<br>
+                                              <small>Подтверждение администратора</small>
+                                          </span>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <div class="stepContainer" style="height: 281px;">
+                        <div id="step-1" class="content" style="display: block;">
+                            <form class="form-horizontal form-label-left">
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Customer-name">Имя
+                                        заказчика
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="Customer-name" required="required"
+                                               class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Комментарий</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text"
+                                               name="middle-name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="check-date">Отрасль
+                                        Заказчика
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <select id="check-date" class="form-control " required="">
+                                            <option value="">Выберите..</option>
+                                            <option value="press">Нефтянка</option>
+                                            <option value="net">Телеком</option>
+                                            <option value="mouth">Гос. Учреждение</option>
+                                            <option value="mouth">Медицина</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="check-date">Дата
+                                        чекапа
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="date" id="last-name" name="check-date" required="required"
+                                               class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div id="step-2" class="content" style="display: none;">
+                            <h2 class="StepTitle">Step 2 Content</h2>
+                            <p>
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor
+                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div id="step-3" class="content" style="display: none;">
+                            <h2 class="StepTitle">Step 3 Content</h2>
+                            <p>
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor
+                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum.
+                            </p>
+                        </div>
+                        <div id="step-4" class="content" style="display: none;">
+                            <h2 class="StepTitle">Step 4 Content</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor
+                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor
+                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="actionBar">
+                        <div class="msgBox">
+                            <div class="content"></div>
+                            <a href="#" class="close">X</a></div>
+                        <div class="loader">Загрузка</div>
+                        <a href="#" class="buttonFinish buttonDisabled btn btn-default">Завершить</a><a href="#"
+                                                                                                        class="buttonNext btn btn-success">Вперед</a><a
+                            href="#" class="buttonPrevious buttonDisabled btn btn-primary">Назад</a></div>
+                </div>
+                <!-- End SmartWizard Content -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="{{=URL('static','theme/vendors/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{=URL('static','theme/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- FastClick -->
+<script src="{{=URL('static','theme/vendors/fastclick/lib/fastclick.js')}}"></script>
+<!-- NProgress -->
+<script src="{{=URL('static','theme/vendors/nprogress/nprogress.js')}}"></script>
+<!-- jQuery Smart Wizard -->
+<script src="{{=URL('static','theme/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
+<!-- Custom Theme Scripts -->
+<script src="{{=URL('static','theme/build/js/custom.min.js')}}"></script>

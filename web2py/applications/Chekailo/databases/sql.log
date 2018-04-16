@@ -140,3 +140,135 @@ success!
 timestamp: 2018-04-15T23:10:00.464000
 ALTER TABLE "t_checkup_archive" ADD "f_file" BLOB;
 success!
+timestamp: 2018-04-16T12:02:39.162000
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+faked!
+timestamp: 2018-04-16T12:02:39.180000
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+faked!
+timestamp: 2018-04-16T12:02:39.187000
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+faked!
+timestamp: 2018-04-16T12:02:39.193000
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+faked!
+timestamp: 2018-04-16T12:02:39.199000
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+faked!
+timestamp: 2018-04-16T12:02:39.207000
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+faked!
+timestamp: 2018-04-16T12:02:39.216000
+CREATE TABLE "t_customers"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_name" CHAR(512),
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+faked!
+timestamp: 2018-04-16T12:02:39.226000
+CREATE TABLE "t_customers_archive"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_name" CHAR(512),
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "current_record" INTEGER REFERENCES "t_customers" ("id") ON DELETE CASCADE  
+);
+faked!
+timestamp: 2018-04-16T12:02:39.235000
+CREATE TABLE "t_partners"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_name" CHAR(512),
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+faked!
+timestamp: 2018-04-16T12:02:39.248000
+CREATE TABLE "t_partners_archive"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_name" CHAR(512),
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "current_record" INTEGER REFERENCES "t_partners" ("id") ON DELETE CASCADE  
+);
+faked!
+timestamp: 2018-04-16T12:02:39.262000
+CREATE TABLE "t_checkup"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_name" CHAR(512),
+    "f_date" TIMESTAMP,
+    "f_type" CHAR(512),
+    "f_file" BLOB,
+    "f_partner_link" INTEGER REFERENCES "t_partners" ("id") ON DELETE CASCADE  ,
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+faked!
+timestamp: 2018-04-16T12:02:39.277000
+CREATE TABLE "t_checkup_archive"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f_name" CHAR(512),
+    "f_date" TIMESTAMP,
+    "f_type" CHAR(512),
+    "f_file" BLOB,
+    "f_partner_link" INTEGER REFERENCES "t_partners" ("id") ON DELETE CASCADE  ,
+    "is_active" CHAR(1),
+    "created_on" TIMESTAMP,
+    "created_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "modified_on" TIMESTAMP,
+    "modified_by" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "current_record" INTEGER REFERENCES "t_checkup" ("id") ON DELETE CASCADE  
+);
+faked!
